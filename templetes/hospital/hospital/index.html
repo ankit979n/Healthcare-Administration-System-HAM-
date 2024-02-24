@@ -1,0 +1,81 @@
+{% extends 'hospital/homebase.html' %}
+{% load static %}
+
+{% block content %}
+<head>
+  <style media="screen">
+    .jumbotron {
+      margin-top: 0px;
+      margin-bottom: 0px;
+      background-image: url('{% static "images/hospital_img.jpg" %}');
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+
+    .jumbotron h5,
+    h3 {
+      text-align: center;
+      color: white; /* Set text color for better visibility */
+    }
+
+    .alert {
+      margin: 0px;
+    }
+
+    @keyframes typing {
+      from {
+          width: 0;
+      }
+      to {
+          width: 100%;
+      }
+    }
+
+    @keyframes changeColor {
+      0%, 100% {
+          color: white; /* Set the initial and final color */
+      }
+      50% {
+          color: black; /* Set the color at the midpoint of the animation */
+      }
+    }
+
+    .glow {
+      display: inline-block;
+      overflow: hidden;
+      white-space: nowrap;
+      text-align: center; /* Center the text */
+      border-right: 2px solid transparent; /* Adjust the color and thickness of the cursor */
+      animation: typing 3s steps(30) infinite alternate-reverse, changeColor 5s infinite; /* Adjust the durations as needed */
+    }
+    .fixed-text {
+      position: fixed; /* Make the text stick to one place */
+      top: 50%; /* Adjust the vertical position as needed */
+      left: 50%; /* Adjust the horizontal position as needed */
+      transform: translate(-50%, -50%); /* Center the text within its container */
+      z-index: 999; /* Ensure it appears above other elements */
+    }
+  </style>
+</head>
+<br>
+<br>
+
+<div class="jumbotron" style="margin-bottom: 0px;margin-top: 0px;">
+  <br>
+  <h5 class="display-3 glow"><b>Welcome to Hospital Website<b></h5>
+  <br><br><br><br><br>
+  <p>
+    <h3>Need Medical Help ?</h3>
+    <p class="lead">
+      <a class="btn btn-danger btn-lg" href="/patientclick" role="button">Take Appointment Now!</a>
+    </p>
+    <br><br>
+  </p>
+</div>
+
+<br><br><br><br>
+
+{% include "hospital/admin_doctor_patient_card.html" %}
+<br><br><br>
+
+{% endblock content %}
