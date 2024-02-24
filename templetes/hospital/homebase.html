@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  {% load static %}
+
+<head>
+  <meta charset="utf-8">
+  <title>Enet-HMS - Django</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-image: url('{% static "images/back_ground2.jpg" %}');
+      background-size: cover;
+      background-repeat: no-repeat;
+      font-family: Arial, sans-serif;
+    }
+  </style>
+</head>
+
+<body>
+  {% include "hospital/navbar.html" %}
+  {% block content %}
+
+  {% endblock content %}
+  {% include "hospital/footer.html" %}
+</body>
+
+</html>
